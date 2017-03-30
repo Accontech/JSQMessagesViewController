@@ -44,6 +44,7 @@
 #import "NSAttributedString+EmojiExtension.h"
 #import "EmojiTextAttachment.h"
 
+#import "JSQMessages-Swift.h"
 // Fixes rdar://26295020
 // See issue #1247 and Peter Steinberger's comment:
 // https://github.com/jessesquires/JSQMessagesViewController/issues/1247#issuecomment-219386199
