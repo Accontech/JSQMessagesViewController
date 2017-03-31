@@ -640,20 +640,33 @@ JSQMessagesKeyboardControllerDelegate>{
 - (NSAttributedString *)formatTextInTextView:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] init];
-    
-    NSString *firstLetter = [text substringFromIndex:1];
-
-    for (NSInteger i = 0; i < text.length; i += 2) {
-        NSString * newString = [text substringWithRange:NSMakeRange(i, 2)];
-        if ([emojis containsObject:newString]) {
-            EmojiTextAttachment *emojiTextAttachment = [EmojiTextAttachment new];
-            emojiTextAttachment.image = [UIImage imageNamed:newString];
-            emojiTextAttachment.emojiSize = CGSizeMake(15,15);
-            [attributedString appendAttributedString:[NSAttributedString attributedStringWithAttachment:emojiTextAttachment]];
-        } else {
-            [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:newString]];
+    if (text.length > 1) {
+        for (NSInteger i = 0; i < text.length;) {
+            NSString * newString = [text substringWithRange:NSMakeRange(i, 2)];
+            if ([emojis containsObject:newString]) {
+                EmojiTextAttachment *emojiTextAttachment = [EmojiTextAttachment new];
+                emojiTextAttachment.image = [UIImage imageNamed:newString];
+                emojiTextAttachment.emojiSize = CGSizeMake(15,15);
+                [attributedString appendAttributedString:[NSAttributedString attributedStringWithAttachment:emojiTextAttachment]];
+                i += 2;
+                if (i == text.length) {
+                    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[text substringWithRange:NSMakeRange(i - 2, 1)]]];
+                    return attributedString;
+                }
+                
+            } else {
+                [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[text substringWithRange:NSMakeRange(i, 1)]]];
+                i++;
+                if (i == text.length - 1) {
+                    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:[text substringWithRange:NSMakeRange(i, 1)]]];
+                    return attributedString;
+                }
+            }
         }
+        return attributedString;
     }
+
+    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:text]];
     return attributedString;
 
 }
