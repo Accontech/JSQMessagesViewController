@@ -14,6 +14,8 @@
 
 @property (nonatomic, assign) id<AGEmojiPageViewDelegate> delegate;
 @property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) NSArray *customEmojiList;
+//
 
 /**
  Creates and returns an EmojiPageView
