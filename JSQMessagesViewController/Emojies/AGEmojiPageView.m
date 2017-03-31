@@ -46,7 +46,17 @@
       } else {
           for (NSUInteger i = 0; i < [buttonTexts count]; ++i) {
               UIButton *button = [self createButtonAtIndex:i];
-              [button setTitle:buttonTexts[i] forState:UIControlStateNormal];
+              if ([self.category isEqualToString:@"Recent"]) {
+                  if ([self.customEmojiList containsObject:(NSString *)buttonTexts[i]]) {
+                      [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", buttonTexts[i]]] forState:UIControlStateNormal];
+                      button.titleLabel.text = [NSString stringWithFormat:@"%@", buttonTexts[i]];
+                      [button setFrame:CGRectMake(button.frame.origin.x, button.frame.origin.y, 35, 35)];
+                  } else {
+                      [button setTitle:buttonTexts[i] forState:UIControlStateNormal];
+                  }
+              } else {
+                  [button setTitle:buttonTexts[i] forState:UIControlStateNormal];
+              }
               [self addToViewButton:button];
           }
       }

@@ -646,7 +646,7 @@ JSQMessagesKeyboardControllerDelegate>{
             if ([emojis containsObject:newString]) {
                 EmojiTextAttachment *emojiTextAttachment = [EmojiTextAttachment new];
                 emojiTextAttachment.image = [UIImage imageNamed:newString];
-                emojiTextAttachment.emojiSize = CGSizeMake(15,15);
+                emojiTextAttachment.emojiSize = CGSizeMake(17,17);
                 [attributedString appendAttributedString:[NSAttributedString attributedStringWithAttachment:emojiTextAttachment]];
                 i += 2;
                 if (i == text.length) {

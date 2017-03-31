@@ -377,6 +377,9 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
     NSMutableArray *buttonTexts = [self emojiTextsForCategory:self.category
                                                     fromIndex:startingIndex
                                                       toIndex:endingIndex];
+    if ([self.category isEqualToString:segmentRecentName]) {
+        pageView.customEmojiList = [self emojiListForCategory:@"Custom"];
+    }
     [pageView setButtonTexts:buttonTexts];
     pageView.frame = CGRectMake(index * CGRectGetWidth(scrollView.bounds),
                                 0,
