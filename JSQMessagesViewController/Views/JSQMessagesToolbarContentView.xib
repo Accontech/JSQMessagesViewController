@@ -57,6 +57,7 @@
                 <constraint firstItem="LEq-G7-jGt" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="9" id="0gD-Qu-dIc"/>
                 <constraint firstItem="Myo-1S-Vg1" firstAttribute="leading" secondItem="bax-E7-ba3" secondAttribute="trailing" constant="3" id="7x4-bl-ElR"/>
                 <constraint firstItem="dm4-NT-mvr" firstAttribute="top" secondItem="1" secondAttribute="top" constant="7" id="7zR-wr-vpW"/>
+                <constraint firstAttribute="bottom" secondItem="bax-E7-ba3" secondAttribute="bottom" id="8v5-dP-uHa"/>
                 <constraint firstItem="LEq-G7-jGt" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="H2a-O3-gKR"/>
                 <constraint firstItem="dm4-NT-mvr" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="Klh-5v-PAE"/>
                 <constraint firstAttribute="bottom" secondItem="Myo-1S-Vg1" secondAttribute="bottom" id="Qxi-H9-Vzk"/>
@@ -66,7 +67,6 @@
                 <constraint firstItem="fns-Yl-4GI" firstAttribute="top" secondItem="1" secondAttribute="top" constant="6" id="eeI-5b-5eK"/>
                 <constraint firstItem="Myo-1S-Vg1" firstAttribute="top" secondItem="1" secondAttribute="top" id="ffg-ab-XUs"/>
                 <constraint firstAttribute="trailing" secondItem="Myo-1S-Vg1" secondAttribute="trailing" id="lc3-xq-4go"/>
-                <constraint firstItem="bax-E7-ba3" firstAttribute="top" secondItem="dm4-NT-mvr" secondAttribute="top" constant="36" id="nl5-qS-Qcg"/>
                 <constraint firstItem="bax-E7-ba3" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="rnn-gf-jMj"/>
                 <constraint firstItem="dm4-NT-mvr" firstAttribute="leading" secondItem="LEq-G7-jGt" secondAttribute="trailing" constant="22" id="vCr-p8-GbG"/>
             </constraints>
