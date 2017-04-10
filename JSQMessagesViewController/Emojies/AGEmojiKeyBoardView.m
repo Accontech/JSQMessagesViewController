@@ -65,7 +65,7 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
       //MRX - commented
-//    array = [NSMutableArray array];
+    array = [NSMutableArray array];
 //    for (AGEmojiKeyboardViewCategoryImage i = AGEmojiKeyboardViewCategoryImageRecent;
 //         i <= AGEmojiKeyboardViewCategoryImageCharacters;
 //         ++i) {
@@ -279,10 +279,10 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
 
 - (void)categoryChangedViaSegmentsBar:(UISegmentedControl *)sender {
   // recalculate number of pages for new category and recreate emoji pages
-  self.category = [self categoryNameAtIndex:sender.selectedSegmentIndex];
-  [self setSelectedCategoryImageInSegmentControl:sender
-                                         atIndex:sender.selectedSegmentIndex];
-  self.pageControl.currentPage = 0;
+//  self.category = [self categoryNameAtIndex:sender.selectedSegmentIndex];
+//  [self setSelectedCategoryImageInSegmentControl:sender
+//                                         atIndex:sender.selectedSegmentIndex];
+//  self.pageControl.currentPage = 0;
   [self setNeedsLayout];
 }
 
