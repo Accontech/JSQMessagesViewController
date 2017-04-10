@@ -276,6 +276,7 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
   for (int i=0; i < self.segmentsBar.numberOfSegments; ++i) {
     [segmentsBar setImage:self.imagesForNonSelectedSegments[i] forSegmentAtIndex:i];
   }
+    //MRX - commented / instead of 0 put index
   [segmentsBar setImage:self.imagesForSelectedSegments[0] forSegmentAtIndex:0];
 }
 
