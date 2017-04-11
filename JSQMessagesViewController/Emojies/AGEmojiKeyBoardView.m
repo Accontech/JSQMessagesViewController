@@ -50,7 +50,7 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
   if ([self.dataSource respondsToSelector:@selector(defaultCategoryForEmojiKeyboardView:)]) {
     return [self.dataSource defaultCategoryForEmojiKeyboardView:self];
   }
-  return AGEmojiKeyboardViewCategoryImageRecent;
+  return AGEmojiKeyboardViewCategoryImageFace;
 }
 
 - (NSUInteger)recentEmojisMaintainedCount {
@@ -64,12 +64,13 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
   static NSMutableArray *array;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
+      //MRX - commented
     array = [NSMutableArray array];
-    for (AGEmojiKeyboardViewCategoryImage i = AGEmojiKeyboardViewCategoryImageRecent;
-         i <= AGEmojiKeyboardViewCategoryImageCharacters;
-         ++i) {
-      [array addObject:[self imageWithImage:[self.dataSource emojiKeyboardView:self imageForSelectedCategory:i] scaledToSize:CGSizeMake(30, 30)]];
-    }
+//    for (AGEmojiKeyboardViewCategoryImage i = AGEmojiKeyboardViewCategoryImageRecent;
+//         i <= AGEmojiKeyboardViewCategoryImageCharacters;
+//         ++i) {
+      [array addObject:[self imageWithImage:[self.dataSource emojiKeyboardView:self imageForSelectedCategory:AGEmojiKeyboardViewCategoryImageFace] scaledToSize:CGSizeMake(30, 30)]];
+//    }
   });
   return array;
 }
@@ -79,11 +80,12 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     array = [NSMutableArray array];
-    for (AGEmojiKeyboardViewCategoryImage i = AGEmojiKeyboardViewCategoryImageRecent;
-         i <= AGEmojiKeyboardViewCategoryImageCharacters;
-         ++i) {
-        [array addObject:[self imageWithImage:[self.dataSource emojiKeyboardView:self imageForNonSelectedCategory:i] scaledToSize:CGSizeMake(30, 30)]];
-    }
+      //MRX - commented
+//    for (AGEmojiKeyboardViewCategoryImage i = AGEmojiKeyboardViewCategoryImageRecent;
+//         i <= AGEmojiKeyboardViewCategoryImageCharacters;
+//         ++i) {
+        [array addObject:[self imageWithImage:[self.dataSource emojiKeyboardView:self imageForNonSelectedCategory:AGEmojiKeyboardViewCategoryImageFace] scaledToSize:CGSizeMake(30, 30)]];
+//    }
   });
   return array;
 }
@@ -229,7 +231,8 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
     [self.segmentsBar setBackgroundImage:selectedBackgroundImage
                                 forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     [self.segmentsBar setDividerImage:[self imageWithColor:[UIColor clearColor]] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [self.segmentsBar setBackgroundImage:[self getSelectionIndicatorImage] forState:UIControlStateSelected  barMetrics:UIBarMetricsDefault];
+    //MRX - commented
+    //[self.segmentsBar setBackgroundImage:[self getSelectionIndicatorImage] forState:UIControlStateSelected  barMetrics:UIBarMetricsDefault];
     
     
 }
@@ -273,15 +276,17 @@ NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
   for (int i=0; i < self.segmentsBar.numberOfSegments; ++i) {
     [segmentsBar setImage:self.imagesForNonSelectedSegments[i] forSegmentAtIndex:i];
   }
-  [segmentsBar setImage:self.imagesForSelectedSegments[index] forSegmentAtIndex:index];
+    //MRX - commented / instead of 0 put index
+  [segmentsBar setImage:self.imagesForSelectedSegments[0] forSegmentAtIndex:0];
 }
 
 - (void)categoryChangedViaSegmentsBar:(UISegmentedControl *)sender {
+    //MRX - commented
   // recalculate number of pages for new category and recreate emoji pages
-  self.category = [self categoryNameAtIndex:sender.selectedSegmentIndex];
-  [self setSelectedCategoryImageInSegmentControl:sender
-                                         atIndex:sender.selectedSegmentIndex];
-  self.pageControl.currentPage = 0;
+//  self.category = [self categoryNameAtIndex:sender.selectedSegmentIndex];
+//  [self setSelectedCategoryImageInSegmentControl:sender
+//                                         atIndex:sender.selectedSegmentIndex];
+//  self.pageControl.currentPage = 0;
   [self setNeedsLayout];
 }
 
