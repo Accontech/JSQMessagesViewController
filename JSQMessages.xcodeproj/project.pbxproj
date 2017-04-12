@@ -113,6 +113,7 @@
 		CEDB14F91E9E1CEE00C080B5 /* EmojisList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDB14F81E9E1CEE00C080B5 /* EmojisList.plist */; };
 		CEDB14FA1E9E1F1300C080B5 /* EmojisList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDB14F81E9E1CEE00C080B5 /* EmojisList.plist */; };
 		CEDB14FC1E9E263300C080B5 /* EmojisList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDB14FB1E9E263300C080B5 /* EmojisList.plist */; };
+		CEDB15021E9E2BD400C080B5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEDB15011E9E2BD400C080B5 /* Property List.plist */; };
 		E8877F1947CE8050ECCD9539 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F882AA48978C11F64DC2DF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -285,6 +286,7 @@
 		C3F882AA48978C11F64DC2DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDB14F81E9E1CEE00C080B5 /* EmojisList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojisList.plist; sourceTree = "<group>"; };
 		CEDB14FB1E9E263300C080B5 /* EmojisList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojisList.plist; sourceTree = "<group>"; };
+		CEDB15011E9E2BD400C080B5 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		E23238C8D8DF79244DEE1787 /* libPods-JSQMessagesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQMessagesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -407,6 +409,7 @@
 				8885734919DE540400E89D20 /* DemoSettingsViewController.m */,
 				88A25F3219D8DF2500924534 /* Images.xcassets */,
 				CEDB14FB1E9E263300C080B5 /* EmojisList.plist */,
+				CEDB15011E9E2BD400C080B5 /* Property List.plist */,
 				88A2601A19D8E45600924534 /* Info.plist */,
 				88A25F3419D8DF2500924534 /* main.m */,
 				88A25F3019D8DF2500924534 /* Main.storyboard */,
@@ -754,6 +757,7 @@
 				CEDB14F91E9E1CEE00C080B5 /* EmojisList.plist in Resources */,
 				88A25F3A19D8DF2500924534 /* Images.xcassets in Resources */,
 				54271E3B1C90469100294290 /* jsq_messages_sample.m4a in Resources */,
+				CEDB15021E9E2BD400C080B5 /* Property List.plist in Resources */,
 				88A25FBC19D8E01A00924534 /* JSQMessagesViewController.xib in Resources */,
 				88A25FD819D8E01A00924534 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				CEDB14FC1E9E263300C080B5 /* EmojisList.plist in Resources */,
