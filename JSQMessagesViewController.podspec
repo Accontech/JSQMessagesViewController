@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
 	s.source_files = 'JSQMessagesViewController/**/*.{h,m}'
 
 	s.resources = ['JSQMessagesViewController/Assets/JSQMessagesAssets.bundle', 'JSQMessagesViewController/**/*.{xib}']
+	s.resources = 'JSQMessagesViewController/Emojies/*.plist'
 
 	s.frameworks = 'QuartzCore', 'CoreGraphics', 'CoreLocation', 'MapKit', 'AVFoundation'
 	s.requires_arc = true
